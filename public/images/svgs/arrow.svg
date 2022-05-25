@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="arrow" transform="translate(-930 -8902)">
+    <g id="Elipse_13" data-name="Elipse 13" transform="translate(935 8907)" fill="#fff" stroke="#707070" stroke-width="1">
+      <circle cx="25" cy="25" r="25" stroke="none"/>
+      <circle cx="25" cy="25" r="24.5" fill="none"/>
+    </g>
+    <path id="Icon_awesome-arrow-circle-up" data-name="Icon awesome-arrow-circle-up" d="M.562,30.563a30,30,0,1,1,30,30A29.995,29.995,0,0,1,.562,30.563Zm17.371,3.5,8.758-9.133V47.014a2.9,2.9,0,0,0,2.9,2.9H31.53a2.9,2.9,0,0,0,2.9-2.9V24.925l8.758,9.133a2.906,2.906,0,0,0,4.149.048l1.319-1.331a2.891,2.891,0,0,0,0-4.1L32.619,12.623a2.891,2.891,0,0,0-4.1,0L12.454,28.675a2.891,2.891,0,0,0,0,4.1l1.319,1.331A2.921,2.921,0,0,0,17.933,34.058Z" transform="translate(929.438 8901.438)" fill="#0cc46d"/>
+  </g>
+</svg>
