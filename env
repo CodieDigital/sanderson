@@ -1,0 +1,4 @@
+BASE_URL=https://codie.digital
+AUTHOR=Codie
+NEXT_PUBLIC_API_URL=https://gpsplenamente.com.br/api/
+SENDGRID_KEY_GPS_QUOTATION=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
