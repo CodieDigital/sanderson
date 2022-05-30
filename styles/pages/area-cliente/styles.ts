@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const AreaCliente = styled.section`
+export const AreaClienteStyle = styled.section`
   position: relative;
   overflow: hidden;
   margin-top: -160px;

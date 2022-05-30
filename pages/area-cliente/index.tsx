@@ -1,5 +1,5 @@
 import { LayoutComponent } from "@components/layout";
-import { AreaCliente } from "@styles/pages/area-cliente/styles";
+import { AreaClienteStyle } from "@styles/pages/area-cliente/styles";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
 import InputMask from "react-input-mask";
@@ -7,7 +7,7 @@ import InputMask from "react-input-mask";
 export default function ClientPage() {
   return (
     <LayoutComponent>
-      <AreaCliente>
+      <AreaClienteStyle>
         <div
           className="bg"
           style={{
@@ -55,7 +55,7 @@ export default function ClientPage() {
             </div>
           </Container>
         </div>
-      </AreaCliente>
+      </AreaClienteStyle>
     </LayoutComponent>
   );
 }
