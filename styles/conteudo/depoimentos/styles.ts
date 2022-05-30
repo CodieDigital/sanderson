@@ -26,6 +26,28 @@ export const Depoimentos = styled.section`
 
   .swiper {
     width: 100%;
+    padding-bottom: 60px;
+  }
+
+  .swiper-slide {
+    position: relative;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: var(--footer-color);
+    top: unset;
+    bottom: 0;
+
+    &::after {
+      font-size: 34px;
+    }
+  }
+
+  .swiper-button-prev {
+    left: unset;
+    right: unset;
+    right: 90px;
   }
 
   .inside-slide {

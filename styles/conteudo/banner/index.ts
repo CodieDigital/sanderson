@@ -19,23 +19,17 @@ export const BannerHome = styled.section`
     z-index: 5;
   }
 
-  .bg {
+  .swiper {
+    margin-top: -160px;
     height: 100vh;
     min-height: 600px;
     width: 100%;
-    margin-top: -160px;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
     overflow: hidden;
+  }
 
-    &::after {
-      content: url("./images/banner-3.png");
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      mix-blend-mode: color-dodge;
+  picture {
+    img {
       object-fit: cover;
     }
   }

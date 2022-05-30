@@ -28,12 +28,20 @@ export const Galeria = styled.section`
       height: 534px;
       max-width: 450px;
       width: 100%;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 
       img,
       span {
         height: inherit !important;
         width: 100% !important;
         object-fit: cover;
+      }
+
+      &:hover {
+        .saiba-mais {
+          opacity: 1;
+        }
       }
     }
 
@@ -50,10 +58,33 @@ export const Galeria = styled.section`
       background-color: var(--white);
       box-shadow: inset 0px 0 1px black;
       clip-path: polygon(0 55%, 100% 0%, 100% 100%, 0% 100%);
-
+      z-index: 3;
       img,
       span {
         max-width: 215px !important;
+        object-fit: contain;
+      }
+    }
+
+    .saiba-mais {
+      position: absolute;
+      width: 100%;
+      min-height: 155px;
+      bottom: 0;
+      left: 0;
+      padding: 30px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      background-color: var(--footer-color);
+      box-shadow: inset 0px 0 1px black;
+      z-index: 2;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+
+      span {
+        text-transform: uppercase;
+        color: #fff;
       }
     }
   }
@@ -83,6 +114,9 @@ export const Galeria = styled.section`
     position: relative;
     z-index: 6;
     gap: 5px;
+    max-width: 330px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   @media only screen and (max-width: 1024px) {

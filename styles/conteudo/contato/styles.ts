@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Contato = styled.section`
-  padding: 2.08vw 15px;
+  padding: 2.08vw 0;
   position: relative;
   overflow: hidden;
 
@@ -21,6 +21,8 @@ export const Contato = styled.section`
     background-color: var(--white);
     justify-content: space-around;
     grid-row-gap: 30px;
+    border-radius: 10px;
+    align-self: center;
   }
 
   .contact-info {

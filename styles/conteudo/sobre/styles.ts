@@ -103,7 +103,7 @@ export const Sobre = styled.section`
   }
 
   .como-funciona {
-    padding: 4.95vw 0;
+    padding: 4.95vw 0 1.56vw;
     margin-top: -280px;
     position: relative;
     overflow: hidden;

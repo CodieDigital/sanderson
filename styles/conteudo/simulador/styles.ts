@@ -95,8 +95,10 @@ export const Simulador = styled.section`
           width: 100%;
           justify-content: space-between;
           gap: 10px;
+
           .opcao {
             width: 120px;
+            cursor: pointer;
 
             .imagem {
               border-radius: 10px;
@@ -106,12 +108,29 @@ export const Simulador = styled.section`
               display: flex;
               align-items: center;
               justify-content: center;
+              position: relative;
             }
 
             .legenda {
               text-align: center;
               color: #383838;
               margin-top: 7px;
+            }
+
+            &:hover {
+              .imagem {
+                border: 2px solid #707070;
+                border-radius: 0px;
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                  border-bottom: 3px solid #fca01f;
+                  width: 100%;
+                  height: 100%;
+                  inset: 0;
+                }
+              }
             }
           }
         }
@@ -130,6 +149,12 @@ export const Simulador = styled.section`
           margin: 0 auto;
           text-transform: uppercase;
           color: var(--text-color);
+          font-weight: 700;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            background-color: var(--darker-button-color) !important;
+          }
         }
       }
     }
