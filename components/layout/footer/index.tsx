@@ -6,27 +6,27 @@ import Image from "next/image";
 export function FooterComponent() {
   const menuItems = [
     {
-      link: "#solucoes",
+      link: "/#solucoes",
       name: "Soluções",
     },
     {
-      link: "#sobre",
+      link: "/#sobre",
       name: "Quem Somos",
     },
     {
-      link: "#como-funciona",
+      link: "/#como-funciona",
       name: "Como Funciona",
     },
     {
-      link: "#simulador",
+      link: "/#simulador",
       name: "Simulador",
     },
     {
-      link: "#cases",
+      link: "/#cases",
       name: "Cases",
     },
     {
-      link: "#contato",
+      link: "/#contato",
       name: "Contato",
     },
   ];
@@ -86,7 +86,7 @@ export function FooterComponent() {
 
           <div className="bottom-footer">
             <div className="termos-privacidade">
-              <Link href="/termos">
+              <Link href="/politicas">
                 <a>Política de privacidade</a>
               </Link>
 
@@ -95,8 +95,8 @@ export function FooterComponent() {
               </Link>
             </div>
 
-            <Link href="https://codie.digital/">
-              <a>
+            <Link href="https://codie.digital/" passHref>
+              <a href="replaced" target="_blank">
                 <Image
                   src="/images/svgs/codie.svg"
                   width={60}

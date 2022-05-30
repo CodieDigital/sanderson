@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const FooterStyle = styled.div`
   background-color: var(--footer-color);
   color: var(--white);
-  margin-top: 50px;
   position: relative;
   padding: 5.89vw 0 15px;
 
@@ -39,6 +38,37 @@ export const FooterStyle = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 20px;
+
+    li {
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+      position: relative;
+      overflow: hidden;
+
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 51%;
+        right: 51%;
+        bottom: 0;
+        background: #fff;
+        height: 1px;
+        -webkit-transition-property: left, right;
+        transition-property: left, right;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+      }
+
+      &:hover {
+        &::before {
+          left: 0;
+          right: 0;
+        }
+      }
+    }
   }
 
   li,
@@ -68,9 +98,9 @@ export const FooterStyle = styled.div`
     align-items: center;
     margin-top: 2.08vw;
     gap: 10px;
+    opacity: 0.5;
 
     .termos-privacidade {
-      opacity: 0.5;
       display: flex;
       gap: 2.08vw;
     }
@@ -80,6 +110,7 @@ export const FooterStyle = styled.div`
     .box-footer {
       flex-wrap: wrap;
       justify-content: center;
+      margin-top: 20px;
     }
 
     .scroll-up {
@@ -95,6 +126,11 @@ export const FooterStyle = styled.div`
     .bottom-footer {
       flex-direction: column;
       justify-content: center;
+
+      .termos-privacidade {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 `;

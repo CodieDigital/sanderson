@@ -113,6 +113,39 @@ export const Header = styled.header<HeaderProps>`
   .menu-desktop {
     width: 100%;
     max-width: 930px;
+
+    ul {
+      li {
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          left: 51%;
+          right: 51%;
+          bottom: 0;
+          background: #fff;
+          height: 1px;
+          -webkit-transition-property: left, right;
+          transition-property: left, right;
+          -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+          -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+        }
+
+        &:hover {
+          &::before {
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+    }
   }
 
   ul {
@@ -138,6 +171,15 @@ export const Header = styled.header<HeaderProps>`
     span,
     a {
       color: var(--text-color);
+    }
+  }
+
+  .li-button {
+    max-width: 170px;
+    width: 100%;
+
+    &::before {
+      display: none;
     }
   }
 

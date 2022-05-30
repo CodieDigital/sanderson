@@ -1,6 +1,5 @@
 import { HeaderComponent } from "./header";
 import { FooterComponent } from "./footer";
-import { HeadComponent } from "./head";
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -10,8 +9,6 @@ interface LayoutProps {
 export function LayoutComponent({ children, headerType }: LayoutProps) {
   return (
     <>
-      <HeadComponent />
-
       <HeaderComponent />
 
       {children}

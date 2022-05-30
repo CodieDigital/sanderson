@@ -12,27 +12,27 @@ export function HeaderComponent({ headerType }: HeaderProps) {
 
   const menuItems = [
     {
-      link: "#solucoes",
+      link: "/#solucoes",
       name: "Soluções",
     },
     {
-      link: "#sobre",
+      link: "/#sobre",
       name: "Quem Somos",
     },
     {
-      link: "#como-funciona",
+      link: "/#como-funciona",
       name: "Como Funciona",
     },
     {
-      link: "#simulador",
+      link: "/#simulador",
       name: "Simulador",
     },
     {
-      link: "#cases",
+      link: "/#cases",
       name: "Cases",
     },
     {
-      link: "#contato",
+      link: "/#contato",
       name: "Contato",
     },
   ];
@@ -40,14 +40,18 @@ export function HeaderComponent({ headerType }: HeaderProps) {
   return (
     <S.Header headerType={headerType} id="header">
       <div className="container-geral">
-        <div className="logo-menu">
-          <Image
-            src="/images/svgs/logo.svg"
-            alt="logo do menu"
-            width={315}
-            height={74}
-          />
-        </div>
+        <Link href="/" passHref>
+          <a href="replaced">
+            <div className="logo-menu">
+              <Image
+                src="/images/svgs/logo.svg"
+                alt="logo do menu"
+                width={315}
+                height={74}
+              />
+            </div>
+          </a>
+        </Link>
 
         <div className={`menu-mobile ${menu ? "active" : ""}`}>
           <div className="filter">
@@ -98,9 +102,11 @@ export function HeaderComponent({ headerType }: HeaderProps) {
                   </li>
                 );
               })}
-              <li className="link-16-medium bt-cliente">
-                <Link href="/area-cliente">
-                  <a>Área do Cliente</a>
+              <li className="link-16-medium li-button">
+                <Link href="/area-cliente" passHref>
+                  <a href="replaced" className="bt-cliente">
+                    Área do Cliente
+                  </a>
                 </Link>
               </li>
             </ul>
