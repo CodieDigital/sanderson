@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 
 import { LayoutComponent } from "@components/layout";
 
@@ -14,6 +14,12 @@ import InputMask from "react-input-mask";
 
 //Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/effect-fade";
+
+//Popup
+import React from "react";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 // Sections
 import { BannerHome } from "@styles/conteudo/banner";
@@ -139,16 +145,37 @@ export default function HomePage() {
 
   const projectGalleryImages = [
     {
+      id: "1",
       imageSrc: "/images/solucoes-1.jpg",
+      projectImages: [
+        { imageProjectSrc: "/images/banner-simulador.jpg" },
+        { imageProjectSrc: "/images/case.jpg" },
+      ],
     },
     {
+      id: "2",
       imageSrc: "/images/solucoes-2.jpg",
+      projectImages: [
+        { imageProjectSrc: "/images/banner-depoimentos.jpg" },
+        { imageProjectSrc: "/images/banner-simulador.jpg" },
+      ],
     },
     {
+      id: "3",
       imageSrc: "/images/solucoes-3.jpg",
+      projectImages: [
+        { imageProjectSrc: "/images/sobre-bg.jpg" },
+        { imageProjectSrc: "/images/banner-simulador.jpg" },
+        { imageProjectSrc: "/images/banner-depoimentos.jpg" },
+      ],
     },
     {
+      id: "4",
       imageSrc: "/images/solucoes-4.jpg",
+      projectImages: [
+        { imageProjectSrc: "/images/solucoes-3.jpg" },
+        { imageProjectSrc: "/images/solucoes-4.jpg" },
+      ],
     },
   ];
 
@@ -163,77 +190,35 @@ export default function HomePage() {
   return (
     <LayoutComponent headerType="home">
       <BannerHome>
-        <div
-          className="bg"
-          style={{
-            backgroundImage: `url("images/banner.jpg")`,
-          }}
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={1}
+          effect={"fade"}
+          autoplay={true}
+          loop={true}
+          allowTouchMove={false}
         >
-          <div className="container-geral" id="scene">
-            <div className="content-banner">
-              <div className="spacing-div"></div>
+          <SwiperSlide>
+            <picture>
+              <source srcSet="/images/banner.jpg" media="(max-width: 1024px)" />
+              <Image src="/images/banner.jpg" layout="fill" alt="banner" />
+            </picture>
+          </SwiperSlide>
 
-              <div className="text-content">
-                <h1 className="titulo-58-bold">
-                  Pare de desperdiçar dinheiro com energia elétrica
-                </h1>
-
-                <div className="text paragraph-24-light">
-                  <p>
-                    Projetos de
-                    <span className="-bold"> sistemas fotovoltaicos </span>
-                    seguros, com qualidade, pagamento facilitado e alto retorno
-                    financeiro
-                  </p>
-                </div>
-
-                <ButtonComponent href="/contato" text="solicite um orçamento" />
-              </div>
-
-              <div className="scroll">
-                <a href="">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                  >
-                    <g
-                      id="Icon_feather-arrow-down"
-                      data-name="Icon feather-arrow-down"
-                      transform="translate(-6 -6)"
-                    >
-                      <path
-                        id="Caminho_16"
-                        data-name="Caminho 16"
-                        d="M17.375,20a.875.875,0,0,1-.875-.875V6.875a.875.875,0,0,1,1.75,0v12.25A.875.875,0,0,1,17.375,20Z"
-                        transform="translate(-4.375 0)"
-                        fill="#f5f5f5"
-                      />
-                      <path
-                        id="Caminho_17"
-                        data-name="Caminho 17"
-                        d="M13,24.375a.872.872,0,0,1-.619-.256L6.256,17.994a.875.875,0,1,1,1.237-1.237L13,22.263l5.506-5.506a.875.875,0,1,1,1.237,1.237l-6.125,6.125A.872.872,0,0,1,13,24.375Z"
-                        transform="translate(0 -4.375)"
-                        fill="#f5f5f5"
-                      />
-                    </g>
-                  </svg>
-                  <span>Scroll</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="image-banner">
-              <Image
-                src="/images/banner-detail.png"
-                alt="foto"
-                width={997}
-                height={870}
+          <SwiperSlide>
+            <picture>
+              <source
+                srcSet="/images/simulador-bg.jpg"
+                media="(max-width: 1024px)"
               />
-            </div>
-          </div>
-        </div>
+              <Image
+                src="/images/simulador-bg.jpg"
+                layout="fill"
+                alt="banner"
+              />
+            </picture>
+          </SwiperSlide>
+        </Swiper>
       </BannerHome>
 
       <Solucoes id="solucoes">
@@ -277,9 +262,9 @@ export default function HomePage() {
           </div>
 
           <div className="orcamento">
-            <ButtonComponent href="/contato" text="solicite um orçamento" />
+            <ButtonComponent href="#contato" text="solicite um orçamento" />
 
-            <Link href="/contato">
+            <Link href="#simulador">
               <a className="simule link-16-regular">Simule sua instalação</a>
             </Link>
           </div>
@@ -333,9 +318,9 @@ export default function HomePage() {
                 </div>
 
                 <div className="buttons">
-                  <ButtonComponent href="/contato" text="vamos conversar" />
+                  <ButtonComponent href="#contato" text="vamos conversar" />
 
-                  <Link href="/contato">
+                  <Link href="#simulador">
                     <a className="simule link-16-regular">
                       Simule sua instalação
                     </a>
@@ -367,8 +352,8 @@ export default function HomePage() {
             <div className="link-investimento">
               <span>
                 Sistema fotovoltaico é um ótimo investimento,{" "}
-                <Link href="/contato">
-                  <a>vamos conversar.-</a>
+                <Link href="#contato">
+                  <a>vamos conversar.</a>
                 </Link>
               </span>
             </div>
@@ -474,7 +459,7 @@ export default function HomePage() {
               </div>
 
               <div className="buttons">
-                <ButtonComponent href="/contato" text="solicite um orçamento" />
+                <ButtonComponent href="#contato" text="solicite um orçamento" />
               </div>
             </div>
           </div>
@@ -720,7 +705,7 @@ export default function HomePage() {
               },
             }}
           >
-            {projectGalleryImages.map(({ imageSrc }, index) => {
+            {projectGalleryImages.map(({ imageSrc, projectImages }, index) => {
               return (
                 <SwiperSlide key={`images-galery-${index}`}>
                   <Image
@@ -738,15 +723,132 @@ export default function HomePage() {
                       className="logo"
                     />
                   </div>
+                  <div className="saiba-mais">
+                    <Popup
+                      trigger={
+                        <span className="paragraph-18-bold">Saiba mais</span>
+                      }
+                      modal
+                      nested
+                    >
+                      {(
+                        close: MouseEventHandler<HTMLButtonElement> | undefined
+                      ) => (
+                        <div className="modal-galeria">
+                          <button
+                            className="close paragraph-14-regular"
+                            onClick={close}
+                          >
+                            x
+                          </button>
+                          <div className="header">
+                            <Image
+                              src="/images/svgs/logo-verde.svg"
+                              height={50}
+                              width={224}
+                              alt="logo da sanderson"
+                            />
+                          </div>
+                          <div className="content">
+                            <Row>
+                              <Col md={4}>
+                                <div className="infos-block">
+                                  <div className="box-info">
+                                    <div className="info-titulo paragraph-20-regular">
+                                      Potência instalada
+                                    </div>
+                                    <div className="numero">
+                                      <span className="titulo-40-bold">
+                                        2,38
+                                      </span>
+                                      <span className="paragraph-24-light">
+                                        kWp
+                                      </span>
+                                    </div>
+                                  </div>
+
+                                  <div className="box-info">
+                                    <div className="info-titulo paragraph-20-regular">
+                                      Área mínima necessária
+                                    </div>
+                                    <div className="numero">
+                                      <span className="titulo-40-bold">
+                                        19,04
+                                      </span>
+                                      <span className="paragraph-24-light">
+                                        m²
+                                      </span>
+                                    </div>
+                                  </div>
+
+                                  <div className="box-info">
+                                    <div className="info-titulo paragraph-20-regular">
+                                      Quantidade de painéis
+                                    </div>
+                                    <div className="numero">
+                                      <span className="titulo-40-bold">7</span>
+                                      <span className="paragraph-24-light">
+                                        módulos de 340W
+                                      </span>
+                                    </div>
+                                  </div>
+
+                                  <div className="box-info">
+                                    <div className="info-titulo paragraph-20-regular">
+                                      Produção mensal
+                                    </div>
+                                    <div className="numero">
+                                      <span className="titulo-40-bold">
+                                        283,62
+                                      </span>
+                                      <span className="paragraph-24-light">
+                                        kWh/mês
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </Col>
+
+                              <Col md={7}>
+                                <Swiper
+                                  spaceBetween={5}
+                                  slidesPerView={1}
+                                  loop={true}
+                                  autoplay={true}
+                                  pagination={true}
+                                  allowTouchMove={true}
+                                >
+                                  {projectImages.map(
+                                    ({ imageProjectSrc }, index) => {
+                                      return (
+                                        <SwiperSlide key={`images-${index}`}>
+                                          <Image
+                                            src={imageProjectSrc}
+                                            width={450}
+                                            height={534}
+                                            alt="imagem da galeria"
+                                          />
+                                        </SwiperSlide>
+                                      );
+                                    }
+                                  )}
+                                </Swiper>
+                              </Col>
+                            </Row>
+                          </div>
+                        </div>
+                      )}
+                    </Popup>
+                  </div>
                 </SwiperSlide>
               );
             })}
           </Swiper>
 
           <div className="orcamento">
-            <ButtonComponent href="/contato" text="solicite um orçamento" />
+            <ButtonComponent href="#contato" text="solicite um orçamento" />
 
-            <Link href="/contato">
+            <Link href="#simulador">
               <a className="simule link-16-regular">Simule sua instalação</a>
             </Link>
           </div>
@@ -764,7 +866,7 @@ export default function HomePage() {
             slidesPerView={1}
             loop={true}
             autoplay={false}
-            navigation={false}
+            navigation={true}
           >
             {reviewsContent.map(({ text, author, videoSrc }, index) => {
               return (

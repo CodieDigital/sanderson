@@ -6,14 +6,20 @@ import { FontStyle } from "../styles/fonts";
 import { Configs } from "services/configs";
 import { SharedProvider } from "services/context/shared";
 
-import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Autoplay,
+  EffectFade,
+} from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "bootstrap/dist/css/bootstrap.css";
 
-SwiperCore.use([Navigation, Pagination, Autoplay]);
+SwiperCore.use([Navigation, Pagination, Autoplay, EffectFade]);
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -37,6 +43,10 @@ const App = ({ Component, pageProps }: AppProps) => {
 
         <meta name="google-site-verification" content="" />
         <meta name="rating" content="general" />
+        <link
+          rel="stylesheet"
+          href="https://use.typekit.net/xjy6bto.css"
+        ></link>
       </Head>
 
       <FontStyle />
