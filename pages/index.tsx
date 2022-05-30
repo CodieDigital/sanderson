@@ -432,7 +432,7 @@ export default function HomePage() {
           </div>
         </div>
       </Sobre>
-
+{/* 
       <Simulador
         style={{
           backgroundImage: `url("images/banner-simulador.jpg")`,
@@ -670,7 +670,7 @@ export default function HomePage() {
             </div>
           </div>
         </Container>
-      </Simulador>
+      </Simulador> */}
 
       <Galeria id="cases">
         <div className="detail-right">
