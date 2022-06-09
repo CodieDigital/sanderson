@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Galeria = styled.section`
   padding: 5.21vw 0 3.85vw;
-  overflow: hidden;
   position: relative;
 
   [class*="detail-"] {
@@ -12,7 +11,10 @@ export const Galeria = styled.section`
 
   .detail-right {
     top: -45%;
-    right: -92%;
+    right: 0;
+    width: 100%;
+    max-width: 582px;
+    height: 100%;
   }
 
   .middle-title {

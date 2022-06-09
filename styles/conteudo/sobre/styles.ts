@@ -106,7 +106,6 @@ export const Sobre = styled.section`
     padding: 4.95vw 0 1.56vw;
     margin-top: -280px;
     position: relative;
-    overflow: hidden;
 
     .detail-left {
       bottom: -72%;
@@ -115,7 +114,10 @@ export const Sobre = styled.section`
 
     .detail-right {
       top: -35%;
-      right: -62%;
+      right: 0;
+      width: 100%;
+      max-width: 582px;
+      height: 100%;
     }
 
     .container-geral {
