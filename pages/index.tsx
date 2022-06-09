@@ -84,7 +84,7 @@ export default function HomePage() {
       iconSrc: "/images/svgs/sobre-2.svg",
       titulo: "LOGÍSTICA PRÓPRIA",
       texto:
-        "Toda logística de caminhões, muncks, tratores, etc é nossa. Isso facilita e traz agilidade para as instalações, além de diminuir o custo do projeto.",
+        "Toda logística de caminhões, muncks e etc é nossa. Isso traz facilidade, agilidade e segurança para as instalações.",
     },
     {
       id: "3",
@@ -98,7 +98,7 @@ export default function HomePage() {
       iconSrc: "/images/svgs/sobre-4.svg",
       titulo: "EQUIPAMENTO DE QUALIDADE",
       texto:
-        "Sempre priorizamos trabalhar com as melhores do mercado, trazendo mais segurança e comodidade para os nossos clientes.",
+        "Hoje no mercado existem diversas marcas, nós sempre priorizamos trabalhar com as melhores do mercado, trazendo mais segurança e comodidade para os nossos clientes.",
     },
     {
       id: "5",
@@ -112,7 +112,7 @@ export default function HomePage() {
       iconSrc: "/images/svgs/sobre-6.svg",
       titulo: "GARANTIA SOLIDÁRIA",
       texto:
-        "Toda logística de caminhões, muncks, tratores, etc é nossa. Isso facilita e traz agilidade para as instalações, além de diminuir o custo do projeto.",
+        "O contratado de garantia solidária permite que o cliente acione a garantia direto com a Sanderson Solar, trazendo mais segurança e respaldo na resolução do problema.",
     },
   ];
 
@@ -146,35 +146,76 @@ export default function HomePage() {
   const projectGalleryImages = [
     {
       id: "1",
-      imageSrc: "/images/solucoes-1.jpg",
+      title: "Estância Santa Paula",
+      potencia: "44.55",
+      areaMinima: "558",
+      quantidadePaineis: "135",
+      wattsPaineis: "330",
+      producaoMensal: "5.430",
+      imageSrc: "/images/PROJETOS REALIZADOS/ESTANCIA SANTA PAULA/31.jpeg",
       projectImages: [
-        { imageProjectSrc: "/images/banner-simulador.jpg" },
-        { imageProjectSrc: "/images/case.jpg" },
+        {
+          imageProjectSrc:
+            "/images/PROJETOS REALIZADOS/ESTANCIA SANTA PAULA/31.jpeg",
+        },
+        {
+          imageProjectSrc:
+            "/images/PROJETOS REALIZADOS/ESTANCIA SANTA PAULA/DJI_0164.jpeg",
+        },
+        {
+          imageProjectSrc:
+            "/images/PROJETOS REALIZADOS/ESTANCIA SANTA PAULA/FOTO 02.png",
+        },
       ],
     },
     {
       id: "2",
-      imageSrc: "/images/solucoes-2.jpg",
+      title: "Motel Troia",
+      potencia: "134.1",
+      areaMinima: "835",
+      quantidadePaineis: "298",
+      wattsPaineis: "450",
+      producaoMensal: "14.718",
+      imageSrc: "/images/PROJETOS REALIZADOS/MOTEL TROIA/DJI_0808.JPG",
       projectImages: [
-        { imageProjectSrc: "/images/banner-depoimentos.jpg" },
-        { imageProjectSrc: "/images/banner-simulador.jpg" },
+        {
+          imageProjectSrc:
+            "/images/PROJETOS REALIZADOS/MOTEL TROIA/DJI_0808.JPG",
+        },
+        {
+          imageProjectSrc:
+            "/images/PROJETOS REALIZADOS/MOTEL TROIA/DJI_0811.JPG",
+        },
+        {
+          imageProjectSrc:
+            "/images/PROJETOS REALIZADOS/MOTEL TROIA/DJI_0813.JPG",
+        },
+        {
+          imageProjectSrc:
+            "/images/PROJETOS REALIZADOS/MOTEL TROIA/DJI_0815.JPG",
+        },
       ],
     },
     {
       id: "3",
-      imageSrc: "/images/solucoes-3.jpg",
+      title: "Solog",
+      potencia: "1.600,04",
+      areaMinima: "12.900",
+      quantidadePaineis: "4706",
+      wattsPaineis: "340",
+      producaoMensal: "187.000",
+      imageSrc: "/images/PROJETOS REALIZADOS/SOLOG/DJI_0248 - Copia.JPG",
       projectImages: [
-        { imageProjectSrc: "/images/sobre-bg.jpg" },
-        { imageProjectSrc: "/images/banner-simulador.jpg" },
-        { imageProjectSrc: "/images/banner-depoimentos.jpg" },
-      ],
-    },
-    {
-      id: "4",
-      imageSrc: "/images/solucoes-4.jpg",
-      projectImages: [
-        { imageProjectSrc: "/images/solucoes-3.jpg" },
-        { imageProjectSrc: "/images/solucoes-4.jpg" },
+        {
+          imageProjectSrc:
+            "/images/PROJETOS REALIZADOS/SOLOG/DJI_0248 - Copia.JPG",
+        },
+        {
+          imageProjectSrc: "/images/PROJETOS REALIZADOS/SOLOG/DJI_0259.JPG",
+        },
+        {
+          imageProjectSrc: "/images/PROJETOS REALIZADOS/SOLOG/DJI_0270.JPG",
+        },
       ],
     },
   ];
@@ -277,7 +318,9 @@ export default function HomePage() {
           style={{ backgroundImage: `url("/images/sobre-bg.jpg")` }}
         >
           <Container className="container-geral">
-            <span className="upper-title">quem somos</span>
+            <span className="upper-title">
+              conheça um pouco da nossa história
+            </span>
 
             <div className="title-text">
               <div className="-title">
@@ -372,10 +415,11 @@ export default function HomePage() {
 
           <div className="detail-right">
             <Image
-              src="/images/svgs/green-elipse-solutions-right.svg"
+              src="/images/details/green-elipse-solutions-right.png"
               alt="detalhe"
-              width={2426}
+              width={582}
               height={2109}
+              layout="responsive"
             />
           </div>
 
@@ -432,7 +476,7 @@ export default function HomePage() {
           </div>
         </div>
       </Sobre>
-{/* 
+      {/* 
       <Simulador
         style={{
           backgroundImage: `url("images/banner-simulador.jpg")`,
@@ -675,10 +719,11 @@ export default function HomePage() {
       <Galeria id="cases">
         <div className="detail-right">
           <Image
-            src="/images/svgs/green-elipse-solutions-right.svg"
+            src="/images/details/green-elipse-solutions-right.png"
             alt="detalhe"
-            width={2426}
+            width={582}
             height={2109}
+            layout="responsive"
           />
         </div>
 
@@ -705,144 +750,170 @@ export default function HomePage() {
               },
             }}
           >
-            {projectGalleryImages.map(({ imageSrc, projectImages }, index) => {
-              return (
-                <SwiperSlide key={`images-galery-${index}`}>
-                  <Image
-                    src={imageSrc}
-                    width={450}
-                    height={534}
-                    alt="imagem da galeria"
-                  />
-                  <div className="image-label">
+            {projectGalleryImages.map(
+              (
+                {
+                  imageSrc,
+                  projectImages,
+                  potencia,
+                  areaMinima,
+                  quantidadePaineis,
+                  producaoMensal,
+                  wattsPaineis,
+                },
+                index
+              ) => {
+                return (
+                  <SwiperSlide key={`images-galery-${index}`}>
                     <Image
-                      src="/images/svgs/logo-verde.svg"
-                      width={214}
-                      height={50}
+                      src={imageSrc}
+                      width={450}
+                      height={534}
                       alt="imagem da galeria"
-                      className="logo"
                     />
-                  </div>
-                  <div className="saiba-mais">
-                    <Popup
-                      trigger={
-                        <span className="paragraph-18-bold">Saiba mais</span>
-                      }
-                      modal
-                      nested
-                    >
-                      {(
-                        close: MouseEventHandler<HTMLButtonElement> | undefined
-                      ) => (
-                        <div className="modal-galeria">
-                          <button
-                            className="close paragraph-14-regular"
-                            onClick={close}
-                          >
-                            x
-                          </button>
-                          <div className="header">
-                            <Image
-                              src="/images/svgs/logo-verde.svg"
-                              height={50}
-                              width={224}
-                              alt="logo da sanderson"
-                            />
+                    <div className="image-label">
+                      <Image
+                        src="/images/svgs/logo-verde.svg"
+                        width={214}
+                        height={50}
+                        alt="imagem da galeria"
+                        className="logo"
+                      />
+                    </div>
+                    <div className="saiba-mais">
+                      <Popup
+                        trigger={
+                          <span className="paragraph-18-bold">Saiba mais</span>
+                        }
+                        modal
+                        nested
+                      >
+                        {(
+                          close:
+                            | MouseEventHandler<HTMLButtonElement>
+                            | undefined
+                        ) => (
+                          <div className="modal-galeria">
+                            <button
+                              className="close paragraph-14-regular"
+                              onClick={close}
+                            >
+                              x
+                            </button>
+                            <div className="header">
+                              <Image
+                                src="/images/svgs/logo-verde.svg"
+                                height={50}
+                                width={224}
+                                alt="logo da sanderson"
+                              />
+                            </div>
+                            <div className="content">
+                              <Row>
+                                <Col md={4}>
+                                  <div className="infos-block">
+                                    {potencia.length > 0 && (
+                                      <div className="box-info">
+                                        <div className="info-titulo paragraph-20-regular">
+                                          Potência instalada
+                                        </div>
+                                        <div className="numero">
+                                          <span className="titulo-40-bold">
+                                            {potencia}
+                                          </span>
+                                          <span className="paragraph-24-light">
+                                            kWp
+                                          </span>
+                                        </div>
+                                      </div>
+                                    )}
+
+                                    {areaMinima.length > 0 && (
+                                      <div className="box-info">
+                                        <div className="info-titulo paragraph-20-regular">
+                                          Área mínima necessária
+                                        </div>
+                                        <div className="numero">
+                                          <span className="titulo-40-bold">
+                                            {areaMinima}
+                                          </span>
+                                          <span className="paragraph-24-light">
+                                            m²
+                                          </span>
+                                        </div>
+                                      </div>
+                                    )}
+
+                                    {quantidadePaineis.length > 0 &&
+                                      wattsPaineis.length > 0 && (
+                                        <div className="box-info">
+                                          <div className="info-titulo paragraph-20-regular">
+                                            Quantidade de painéis
+                                          </div>
+                                          <div className="numero">
+                                            <span className="titulo-40-bold">
+                                              {quantidadePaineis}
+                                            </span>
+                                            <span className="paragraph-24-light">
+                                              módulos de {wattsPaineis}W
+                                            </span>
+                                          </div>
+                                        </div>
+                                      )}
+
+                                    {producaoMensal.length > 0 && (
+                                      <div className="box-info">
+                                        <div className="info-titulo paragraph-20-regular">
+                                          Produção mensal
+                                        </div>
+                                        <div className="numero">
+                                          <span className="titulo-40-bold">
+                                            {producaoMensal}
+                                          </span>
+                                          <span className="paragraph-24-light">
+                                            kWh/mês
+                                          </span>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                </Col>
+
+                                <Col md={7}>
+                                  <Swiper
+                                    spaceBetween={5}
+                                    slidesPerView={1}
+                                    loop={true}
+                                    autoplay={true}
+                                    pagination={true}
+                                    allowTouchMove={true}
+                                  >
+                                    {projectImages.map(
+                                      ({ imageProjectSrc }, index) => {
+                                        return (
+                                          <SwiperSlide key={`images-${index}`}>
+                                            <Image
+                                              src={imageProjectSrc}
+                                              width={450}
+                                              height={534}
+                                              alt="imagem da galeria"
+                                            />
+                                          </SwiperSlide>
+                                        );
+                                      }
+                                    )}
+                                  </Swiper>
+                                </Col>
+                              </Row>
+                            </div>
                           </div>
-                          <div className="content">
-                            <Row>
-                              <Col md={4}>
-                                <div className="infos-block">
-                                  <div className="box-info">
-                                    <div className="info-titulo paragraph-20-regular">
-                                      Potência instalada
-                                    </div>
-                                    <div className="numero">
-                                      <span className="titulo-40-bold">
-                                        2,38
-                                      </span>
-                                      <span className="paragraph-24-light">
-                                        kWp
-                                      </span>
-                                    </div>
-                                  </div>
-
-                                  <div className="box-info">
-                                    <div className="info-titulo paragraph-20-regular">
-                                      Área mínima necessária
-                                    </div>
-                                    <div className="numero">
-                                      <span className="titulo-40-bold">
-                                        19,04
-                                      </span>
-                                      <span className="paragraph-24-light">
-                                        m²
-                                      </span>
-                                    </div>
-                                  </div>
-
-                                  <div className="box-info">
-                                    <div className="info-titulo paragraph-20-regular">
-                                      Quantidade de painéis
-                                    </div>
-                                    <div className="numero">
-                                      <span className="titulo-40-bold">7</span>
-                                      <span className="paragraph-24-light">
-                                        módulos de 340W
-                                      </span>
-                                    </div>
-                                  </div>
-
-                                  <div className="box-info">
-                                    <div className="info-titulo paragraph-20-regular">
-                                      Produção mensal
-                                    </div>
-                                    <div className="numero">
-                                      <span className="titulo-40-bold">
-                                        283,62
-                                      </span>
-                                      <span className="paragraph-24-light">
-                                        kWh/mês
-                                      </span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </Col>
-
-                              <Col md={7}>
-                                <Swiper
-                                  spaceBetween={5}
-                                  slidesPerView={1}
-                                  loop={true}
-                                  autoplay={true}
-                                  pagination={true}
-                                  allowTouchMove={true}
-                                >
-                                  {projectImages.map(
-                                    ({ imageProjectSrc }, index) => {
-                                      return (
-                                        <SwiperSlide key={`images-${index}`}>
-                                          <Image
-                                            src={imageProjectSrc}
-                                            width={450}
-                                            height={534}
-                                            alt="imagem da galeria"
-                                          />
-                                        </SwiperSlide>
-                                      );
-                                    }
-                                  )}
-                                </Swiper>
-                              </Col>
-                            </Row>
-                          </div>
-                        </div>
-                      )}
-                    </Popup>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
+                        )}
+                      </Popup>
+                    </div>
+                  </SwiperSlide>
+                );
+              }
+            )}
           </Swiper>
 
           <div className="orcamento">
@@ -855,7 +926,7 @@ export default function HomePage() {
         </Container>
       </Galeria>
 
-      <Depoimentos
+      {/* <Depoimentos
         style={{
           backgroundImage: `url("images/banner-depoimentos.jpg")`,
         }}
@@ -903,7 +974,7 @@ export default function HomePage() {
             })}
           </Swiper>
         </Container>
-      </Depoimentos>
+      </Depoimentos> */}
 
       <Contato id="contato">
         <Container>
@@ -911,8 +982,8 @@ export default function HomePage() {
             <Col md="4" className="contact-info">
               <div className="paragraph-20-regular">
                 Comunicação com o cliente é um dos princípios da Sanderson
-                Solar, os clientes da sabem cada detalhe de prazos e andamentos
-                do processo por completo
+                Solar, os clientes sabem cada detalhe de prazos e andamentos do
+                processo por completo
               </div>
 
               <ul>
@@ -937,7 +1008,7 @@ export default function HomePage() {
                           </g>
                         </g>
                       </svg>
-                      <span>(43) 3373-8107</span>
+                      <span>(43) 3367-0523 </span>
                     </a>
                   </Link>
                 </li>
@@ -963,7 +1034,7 @@ export default function HomePage() {
                           </g>
                         </g>
                       </svg>
-                      <span>(43) 99121-7930</span>
+                      <span>(43) 3367-0523</span>
                     </a>
                   </Link>
                 </li>
