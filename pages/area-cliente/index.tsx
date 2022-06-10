@@ -25,7 +25,7 @@ export default function ClientPage() {
                 <label className="paragraph-16-bold">
                   E-mail
                   <input
-                    type="text"
+                    type="email"
                     placeholder="Digite seu e-mail aqui"
                     className="paragraph-16-regular"
                   />

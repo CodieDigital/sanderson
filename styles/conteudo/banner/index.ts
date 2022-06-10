@@ -21,16 +21,19 @@ export const BannerHome = styled.section`
 
   .swiper {
     margin-top: -160px;
-    height: 100vh;
+    /* height: 100vh; */
+    aspect-ratio: 1920/1080;
     min-height: 600px;
     width: 100%;
     position: relative;
     overflow: hidden;
-  }
 
-  picture {
     img {
       object-fit: cover;
+    }
+
+    .mobile-banner {
+      display: none !important;
     }
   }
 
@@ -95,6 +98,19 @@ export const BannerHome = styled.section`
 
     .image-banner {
       display: none;
+    }
+
+    .swiper {
+      aspect-ratio: 1024/1024;
+      min-height: 300px;
+
+      .mobile-banner {
+        display: flex !important;
+      }
+
+      .desktop-banner {
+        display: none !important;
+      }
     }
   }
 `;

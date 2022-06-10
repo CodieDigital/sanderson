@@ -43,6 +43,14 @@ export default function HomePage() {
   //   })();
   // }, []);
 
+  const bannersHome = [
+    {
+      id: "1",
+      bannerSrcDesktop: "/images/banners/banner.jpg",
+      bannerSrcMobile: "/images/banners/banner-mobile.jpg",
+    },
+  ];
+
   const solutionsItems = [
     {
       id: "1",
@@ -147,6 +155,7 @@ export default function HomePage() {
     {
       id: "1",
       title: "Estância Santa Paula",
+      logoCliente: "",
       potencia: "44.55",
       areaMinima: "558",
       quantidadePaineis: "135",
@@ -160,7 +169,7 @@ export default function HomePage() {
         },
         {
           imageProjectSrc:
-            "/images/PROJETOS REALIZADOS/ESTANCIA SANTA PAULA/DJI_0164.jpeg",
+            "/images/PROJETOS REALIZADOS/ESTANCIA SANTA PAULA/DJI_0164.jpg",
         },
         {
           imageProjectSrc:
@@ -171,6 +180,7 @@ export default function HomePage() {
     {
       id: "2",
       title: "Motel Troia",
+      logoCliente: "",
       potencia: "134.1",
       areaMinima: "835",
       quantidadePaineis: "298",
@@ -199,6 +209,7 @@ export default function HomePage() {
     {
       id: "3",
       title: "Solog",
+      logoCliente: "/images/PROJETOS REALIZADOS/SOLOG/solog-logo.png",
       potencia: "1.600,04",
       areaMinima: "12.900",
       quantidadePaineis: "4706",
@@ -239,26 +250,31 @@ export default function HomePage() {
           loop={true}
           allowTouchMove={false}
         >
-          <SwiperSlide>
-            <picture>
-              <source srcSet="/images/banner.jpg" media="(max-width: 1024px)" />
-              <Image src="/images/banner.jpg" layout="fill" alt="banner" />
-            </picture>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <picture>
-              <source
-                srcSet="/images/simulador-bg.jpg"
-                media="(max-width: 1024px)"
-              />
-              <Image
-                src="/images/simulador-bg.jpg"
-                layout="fill"
-                alt="banner"
-              />
-            </picture>
-          </SwiperSlide>
+          {bannersHome.map(({ id, bannerSrcDesktop, bannerSrcMobile }) => {
+            return (
+              <SwiperSlide key={id}>
+                {/* <picture>
+                  <source
+                    srcSet={bannerSrcMobile}
+                    media="(max-width: 1024px)"
+                  />
+                  <Image src={bannerSrcDesktop} layout="fill" alt="banner" />
+                </picture> */}
+                <Image
+                  src={bannerSrcMobile}
+                  className="mobile-banner"
+                  layout="fill"
+                  alt="banner"
+                />
+                <Image
+                  src={bannerSrcDesktop}
+                  className="desktop-banner"
+                  layout="fill"
+                  alt="banner"
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </BannerHome>
 
@@ -271,7 +287,6 @@ export default function HomePage() {
             height={2109}
           />
         </div>
-
         <div className="detail-bottom">
           <Image
             src="/images/svgs/green-elipse-solutions-right.svg"
@@ -289,7 +304,10 @@ export default function HomePage() {
           <div className="solutions-grid">
             {solutionsItems.map(({ iconSrc, titulo }, index) => {
               return (
-                <div className="solutions-box" key={`solution-boxes-${index}`}>
+                <div
+                  className="solutions-box desaparecer-600"
+                  key={`solution-boxes-${index}`}
+                >
                   <Image
                     src={iconSrc}
                     width={80}
@@ -300,6 +318,34 @@ export default function HomePage() {
                 </div>
               );
             })}
+
+            <Swiper
+              spaceBetween={30}
+              slidesPerView={1}
+              loop={true}
+              autoplay={true}
+              navigation={true}
+              className="aparecer-600"
+            >
+              {solutionsItems.map(({ iconSrc, titulo }, index) => {
+                return (
+                  <SwiperSlide key={`solution-boxes-${index}`}>
+                    <div
+                      className="solutions-box"
+                      key={`solution-boxes-${index}`}
+                    >
+                      <Image
+                        src={iconSrc}
+                        width={80}
+                        height={80}
+                        alt="ilustração da solução"
+                      />
+                      <h3 className="titulo-32-bold">{titulo}</h3>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
           </div>
 
           <div className="orcamento">
@@ -375,7 +421,10 @@ export default function HomePage() {
             <div className="benefits-wrapper">
               {benefitBoxes.map(({ iconSrc, titulo, texto }, index) => {
                 return (
-                  <div className="benefit-box" key={`box-${index}`}>
+                  <div
+                    className="benefit-box desaparecer-600"
+                    key={`box-${index}`}
+                  >
                     <div className="image">
                       <Image
                         src={iconSrc}
@@ -391,10 +440,43 @@ export default function HomePage() {
                   </div>
                 );
               })}
+
+              <Swiper
+                spaceBetween={30}
+                slidesPerView={1}
+                loop={true}
+                autoplay={{
+                  delay: 6000,
+                  disableOnInteraction: true,
+                }}
+                navigation={true}
+                className="aparecer-600"
+              >
+                {benefitBoxes.map(({ iconSrc, titulo, texto }, index) => {
+                  return (
+                    <SwiperSlide key={`solution-boxes-${index}`}>
+                      <div className="benefit-box" key={`box-${index}`}>
+                        <div className="image">
+                          <Image
+                            src={iconSrc}
+                            width={80}
+                            height={80}
+                            alt="icone do benefício"
+                          />
+                        </div>
+                        <div className="title titulo-24-bold">{titulo}</div>
+                        <div className="description paragraph-16-regular">
+                          {texto}
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
             </div>
             <div className="link-investimento">
               <span>
-                Sistema fotovoltaico é um ótimo investimento,{" "}
+                Sistema fotovoltaico é um ótimo investimento,
                 <Link href="#contato">
                   <a>vamos conversar.</a>
                 </Link>
@@ -742,7 +824,7 @@ export default function HomePage() {
               0: {
                 slidesPerView: 1,
               },
-              640: {
+              768: {
                 slidesPerView: 2,
               },
               1024: {
@@ -760,6 +842,8 @@ export default function HomePage() {
                   quantidadePaineis,
                   producaoMensal,
                   wattsPaineis,
+                  logoCliente,
+                  title,
                 },
                 index
               ) => {
@@ -773,10 +857,14 @@ export default function HomePage() {
                     />
                     <div className="image-label">
                       <Image
-                        src="/images/svgs/logo-verde.svg"
+                        src={
+                          !logoCliente
+                            ? (logoCliente = "/images/svgs/logo-verde.svg")
+                            : logoCliente
+                        }
                         width={214}
                         height={50}
-                        alt="imagem da galeria"
+                        alt="logo do cliente"
                         className="logo"
                       />
                     </div>
@@ -801,12 +889,9 @@ export default function HomePage() {
                               x
                             </button>
                             <div className="header">
-                              <Image
-                                src="/images/svgs/logo-verde.svg"
-                                height={50}
-                                width={224}
-                                alt="logo da sanderson"
-                              />
+                              <h3 className="place-title titulo-48-bold">
+                                {title}
+                              </h3>
                             </div>
                             <div className="content">
                               <Row>
@@ -983,7 +1068,7 @@ export default function HomePage() {
               <div className="paragraph-20-regular">
                 Comunicação com o cliente é um dos princípios da Sanderson
                 Solar, os clientes sabem cada detalhe de prazos e andamentos do
-                processo por completo
+                processo por completo.
               </div>
 
               <ul>
@@ -1073,7 +1158,7 @@ export default function HomePage() {
                         </g>
                       </g>
                     </svg>
-                    <span>Segunda a Sexta 8h até 18h</span>
+                    <span>Segunda à Sexta 8h até 18h</span>
                   </a>
                 </li>
 
@@ -1131,7 +1216,7 @@ export default function HomePage() {
                 <label className="paragraph-16-bold">
                   E-mail
                   <input
-                    type="text"
+                    type="email"
                     placeholder="Digite seu e-mail aqui"
                     className="paragraph-16-regular"
                   />

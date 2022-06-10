@@ -301,6 +301,7 @@ export const Sobre = styled.section`
 
         .benefit-box {
           min-height: auto;
+          max-width: 370px;
 
           .image {
             max-width: 60px;
@@ -355,7 +356,39 @@ export const Sobre = styled.section`
   @media only screen and (max-width: 640px) {
     .quem-somos {
       .benefits-wrapper {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: unset;
+
+        .benefit-box {
+          margin: 0 auto;
+          max-width: 300px;
+        }
+      }
+    }
+
+    .aparecer-600 {
+      display: flex !important;
+    }
+
+    .desaparecer-600 {
+      display: none !important;
+    }
+
+    .swiper {
+      width: 100%;
+      display: flex;
+
+      .swiper-slide {
+        margin: 0 auto;
+        display: flex;
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: var(--darker-button-color);
+
+      &::after {
+        font-size: 34px;
       }
     }
   }
@@ -363,6 +396,10 @@ export const Sobre = styled.section`
   @media only screen and (max-width: 450px) {
     .como-funciona .passo-a-passo .steps-box .image {
       display: none !important;
+    }
+
+    .quem-somos .benefits-wrapper .benefit-box {
+      max-width: 220px;
     }
   }
 `;
