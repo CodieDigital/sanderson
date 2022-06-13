@@ -70,6 +70,7 @@ body{
     
     &:hover {
         background-color: var(--darker-button-color);
+        color: var(--text-color) !important;
     }
 }
 
@@ -95,7 +96,7 @@ body{
         font-size: 18px;
         text-align: center;
         padding: 5px;
-
+        
         img{
             object-fit: contain;
         }
@@ -134,7 +135,7 @@ body{
             border-radius: 10px;
             overflow: hidden;
             min-height: 220px;
-
+            
             img, span{
                 object-fit: cover;
                 width:100% !important;
@@ -785,13 +786,13 @@ ul {
 
 @media only screen and (max-width: 600px) {
     .aparecer-600 {
-      display: flex !important;
+        display: flex !important;
     }
-
+    
     .desaparecer-600 {
-      display: none !important;
+        display: none !important;
     }
-  }
+}
 
 @media only screen and (max-width: 520px) {
     

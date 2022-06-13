@@ -47,13 +47,17 @@ export const Galeria = styled.section`
       }
     }
 
+    .place-title {
+      color: var(--footer-color);
+    }
+
     .image-label {
       position: absolute;
       width: 100%;
       min-height: 155px;
       bottom: 0;
       left: 0;
-      padding: 30px;
+      padding: 30px 30px 20px;
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
@@ -65,6 +69,11 @@ export const Galeria = styled.section`
       span {
         max-width: 215px !important;
         object-fit: contain;
+      }
+
+      .place-title {
+        text-align: right;
+        padding-left: 100px;
       }
     }
 
