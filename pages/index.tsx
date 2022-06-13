@@ -155,7 +155,6 @@ export default function HomePage() {
     {
       id: "1",
       title: "Estância Santa Paula",
-      logoCliente: "",
       potencia: "44.55",
       areaMinima: "558",
       quantidadePaineis: "135",
@@ -180,7 +179,6 @@ export default function HomePage() {
     {
       id: "2",
       title: "Motel Troia",
-      logoCliente: "",
       potencia: "134.1",
       areaMinima: "835",
       quantidadePaineis: "298",
@@ -209,7 +207,6 @@ export default function HomePage() {
     {
       id: "3",
       title: "Solog",
-      logoCliente: "/images/PROJETOS REALIZADOS/SOLOG/solog-logo.png",
       potencia: "1.600,04",
       areaMinima: "12.900",
       quantidadePaineis: "4706",
@@ -403,14 +400,12 @@ export default function HomePage() {
           style={{ backgroundImage: `url("/images/sobre-bg.jpg")` }}
         >
           <Container className="container-geral">
-            <span className="upper-title">
-              conheça um pouco da nossa história
-            </span>
+            <span className="upper-title">quem somos</span>
 
             <div className="title-text">
               <div className="-title">
                 <h2 className="titulo-48-bold">
-                  Somos um grupo com mais de 40 anos de experiência
+                  conheça um pouco da nossa história
                 </h2>
               </div>
 
@@ -446,13 +441,17 @@ export default function HomePage() {
                 </div>
 
                 <div className="buttons">
-                  <ButtonComponent href="#contato" text="vamos conversar" />
+                  <ButtonComponent
+                    href="https://api.whatsapp.com/send?phone=554333670523"
+                    text="vamos conversar"
+                    target="_blank"
+                  />
 
-                  <Link href="#simulador">
+                  {/* <Link href="#simulador">
                     <a className="simule link-16-regular">
                       Simule sua instalação
                     </a>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
@@ -881,7 +880,6 @@ export default function HomePage() {
                   quantidadePaineis,
                   producaoMensal,
                   wattsPaineis,
-                  logoCliente,
                   title,
                 },
                 index
@@ -895,17 +893,7 @@ export default function HomePage() {
                       alt="imagem da galeria"
                     />
                     <div className="image-label">
-                      <Image
-                        src={
-                          !logoCliente
-                            ? (logoCliente = "/images/svgs/logo-verde.svg")
-                            : logoCliente
-                        }
-                        width={214}
-                        height={50}
-                        alt="logo do cliente"
-                        className="logo"
-                      />
+                      <h3 className="place-title titulo-32-bold">{title}</h3>
                     </div>
                     <div className="saiba-mais">
                       <Popup
