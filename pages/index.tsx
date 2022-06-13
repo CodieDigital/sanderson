@@ -46,7 +46,7 @@ export default function HomePage() {
   const bannersHome = [
     {
       id: "1",
-      bannerSrcDesktop: "/images/banners/banner.jpg",
+      bannerSrcDesktop: "/images/banners/banner.jpeg",
       bannerSrcMobile: "/images/banners/banner-mobile.jpg",
     },
   ];
@@ -253,25 +253,64 @@ export default function HomePage() {
           {bannersHome.map(({ id, bannerSrcDesktop, bannerSrcMobile }) => {
             return (
               <SwiperSlide key={id}>
-                {/* <picture>
+                <Link href="#contato" passHref>
+                  <a href="replaced">
+                    {/* <picture>
                   <source
                     srcSet={bannerSrcMobile}
                     media="(max-width: 1024px)"
                   />
                   <Image src={bannerSrcDesktop} layout="fill" alt="banner" />
                 </picture> */}
-                <Image
-                  src={bannerSrcMobile}
-                  className="mobile-banner"
-                  layout="fill"
-                  alt="banner"
-                />
-                <Image
-                  src={bannerSrcDesktop}
-                  className="desktop-banner"
-                  layout="fill"
-                  alt="banner"
-                />
+                    <Image
+                      src={bannerSrcMobile}
+                      className="mobile-banner"
+                      layout="fill"
+                      alt="banner"
+                    />
+                    <Image
+                      src={bannerSrcDesktop}
+                      className="desktop-banner"
+                      layout="fill"
+                      alt="banner"
+                    />
+                  </a>
+                </Link>
+                <Container>
+                  <Link href="#solucoes" passHref>
+                    <a className="scroll">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                      >
+                        <g
+                          id="Icon_feather-arrow-down"
+                          data-name="Icon feather-arrow-down"
+                          transform="translate(-6 -6)"
+                        >
+                          <path
+                            id="Caminho_16"
+                            data-name="Caminho 16"
+                            d="M17.375,20a.875.875,0,0,1-.875-.875V6.875a.875.875,0,0,1,1.75,0v12.25A.875.875,0,0,1,17.375,20Z"
+                            transform="translate(-4.375 0)"
+                            fill="#f5f5f5"
+                          />
+                          <path
+                            id="Caminho_17"
+                            data-name="Caminho 17"
+                            d="M13,24.375a.872.872,0,0,1-.619-.256L6.256,17.994a.875.875,0,1,1,1.237-1.237L13,22.263l5.506-5.506a.875.875,0,1,1,1.237,1.237l-6.125,6.125A.872.872,0,0,1,13,24.375Z"
+                            transform="translate(0 -4.375)"
+                            fill="#f5f5f5"
+                          />
+                        </g>
+                      </svg>
+
+                      <span>Scroll</span>
+                    </a>
+                  </Link>
+                </Container>
               </SwiperSlide>
             );
           })}
@@ -1073,7 +1112,7 @@ export default function HomePage() {
 
               <ul>
                 <li>
-                  <Link href="tel:433738107">
+                  <Link href="tel:4333670523">
                     <a className="link-20-regular" target="_blank">
                       <svg
                         id="SVGDoc"
@@ -1099,7 +1138,7 @@ export default function HomePage() {
                 </li>
 
                 <li>
-                  <Link href="https://api.whatsapp.com/send?phone=5543991217930">
+                  <Link href="https://api.whatsapp.com/send?phone=554333670523">
                     <a className="link-20-regular" target="_blank">
                       <svg
                         id="SVGDoc"

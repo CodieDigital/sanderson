@@ -78,6 +78,11 @@ export const BannerHome = styled.section`
   .scroll {
     padding-bottom: 1.56vw;
     display: inline-flex;
+    display: inline-flex;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    gap: 10px;
 
     a {
       display: flex;
