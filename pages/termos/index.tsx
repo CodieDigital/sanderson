@@ -1,5 +1,5 @@
-import { LayoutComponent } from "@components/layout";
-import { Termos } from "@styles/pages/termos/styles";
+import { LayoutComponent } from "components/layout";
+import { Termos } from "styles/pages/termos/styles";
 import { Container } from "react-bootstrap";
 
 export default function TermosPage() {

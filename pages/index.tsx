@@ -1,9 +1,10 @@
-import { MouseEventHandler, useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useRef, useState } from "react";
 
-import { LayoutComponent } from "@components/layout";
+import { LayoutComponent } from "components/layout";
 
-import { api } from "services/api";
+import { api } from "src/services/api";
 import { HomeProps } from "interfaces/pages/home";
+import router from "next/router";
 
 import { url } from "inspector";
 import Image from "next/image";
@@ -11,6 +12,7 @@ import Link from "next/link";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import InputMask from "react-input-mask";
+import { YupValidation } from "src/utils/yup-validation";
 
 //Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,17 +24,23 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
 // Sections
-import { BannerHome } from "@styles/conteudo/banner";
-import { Solucoes } from "@styles/conteudo/solucoes/styles";
-import { Sobre } from "@styles/conteudo/sobre/styles";
-import { Galeria } from "@styles/conteudo/galeria/styles";
-import { Simulador } from "@styles/conteudo/simulador/styles";
-import { Depoimentos } from "@styles/conteudo/depoimentos/styles";
-import { Contato } from "@styles/conteudo/contato/styles";
+import { BannerHome } from "styles/conteudo/banner";
+import { Solucoes } from "styles/conteudo/solucoes/styles";
+import { Sobre } from "styles/conteudo/sobre/styles";
+import { Galeria } from "styles/conteudo/galeria/styles";
+import { Simulador } from "styles/conteudo/simulador/styles";
+import { Depoimentos } from "styles/conteudo/depoimentos/styles";
+import { Contato } from "styles/conteudo/contato/styles";
 
 //Components
-import { ButtonComponent } from "@components/data/button";
-import { Container } from "@styles/global";
+import { ButtonComponent } from "components/data/button";
+import { Container } from "styles/global";
+
+import { Form } from "@unform/web";
+import { FormHandles } from "@unform/core";
+
+//Interfaces
+import { InputComponent } from "components/data/input";
 
 export default function HomePage() {
   // const [response, setResponse] = useState<HomeProps>({});
@@ -42,6 +50,76 @@ export default function HomePage() {
   //     const { data } = await api.get<HomeProps>("/home");
   //   })();
   // }, []);
+
+  interface SubmitProps {
+    name: string;
+    email: string;
+    telefone: string;
+    valorMedio: string;
+  }
+
+  const [loading, setLoading] = useState(false);
+
+  const formRef = useRef<FormHandles>(null);
+
+  async function handleSubmit({
+    name,
+    email,
+    telefone,
+    valorMedio,
+  }: SubmitProps) {
+    const Yup = await import("yup");
+
+    try {
+      console.log({
+        name,
+        email,
+        telefone,
+        valorMedio,
+      });
+      setLoading(true);
+
+      const schema = Yup.object().shape({
+        name: Yup.string().required("Por favor, digite um nome"),
+        email: Yup.string()
+          .email("Email inválido")
+          .required("Por favor, digite um email"),
+        telefone: Yup.string().required("Por favor, digite um telefone"),
+        valorMedio: Yup.string().required("Por favor, digite um valor"),
+      });
+
+      await schema.validate(
+        { name, email, telefone, valorMedio },
+        {
+          abortEarly: false,
+        }
+      );
+
+      formRef.current?.setErrors({});
+
+      console.log({ name, email, telefone, valorMedio });
+
+      const response = await api.post("form", {
+        name,
+        email,
+        telefone,
+        valorMedio,
+      });
+
+      if (response.status === 200) {
+        // router.push({
+        //   pathname: "/contact/success",
+        //   query: { name },
+        // });
+
+        setLoading(false);
+      }
+    } catch (err) {
+      setLoading(false);
+
+      YupValidation(Yup, err, formRef);
+    }
+  }
 
   const bannersHome = [
     {
@@ -235,7 +313,6 @@ export default function HomePage() {
       videoSrc: "https://www.youtube.com/embed/RpC7sv8_LIg",
     },
   ];
-
   return (
     <LayoutComponent headerType="home">
       <BannerHome>
@@ -427,7 +504,6 @@ export default function HomePage() {
                     conhecimento, infraestrutura e tecnologia para trazer ainda
                     mais inovações para o setor fotovoltaico.
                   </p>
-
                   <p>
                     Atualmente contamos com uma equipe de mais de 70
                     funcionários. Atendemos o mercado em todos os segmentos,
@@ -1220,50 +1296,48 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <form>
+              <Form ref={formRef} onSubmit={handleSubmit}>
                 <label className="paragraph-16-bold">
                   Nome completo
-                  <input
+                  <InputComponent
                     type="text"
                     placeholder="Digite seu nome completo aqui"
-                    className="paragraph-16-regular"
+                    name="name"
                   />
                 </label>
 
                 <label className="paragraph-16-bold">
                   Telefone
-                  <InputMask
+                  <InputComponent
                     mask="(99) 9 9999-9999"
                     type="text"
                     placeholder="(DDD) 99999-9999"
-                    className="paragraph-16-regular"
+                    name="telefone"
                   />
                 </label>
 
                 <label className="paragraph-16-bold">
                   E-mail
-                  <input
+                  <InputComponent
                     type="email"
                     placeholder="Digite seu e-mail aqui"
-                    className="paragraph-16-regular"
+                    name="email"
                   />
                 </label>
 
                 <label className="paragraph-16-bold">
                   Qual o valor médio da sua conta de energia?
-                  <input
+                  <InputComponent
                     type="text"
                     placeholder="Entre R$100 e R$400"
-                    className="paragraph-16-regular"
+                    name="valorMedio"
                   />
                 </label>
 
-                <input
-                  type="submit"
-                  value="solicite um orçamento"
-                  className="bt link-18-bold"
-                />
-              </form>
+                <button className="bt paragraph-18-bold" type="submit">
+                  solicite um orçamento
+                </button>
+              </Form>
             </Col>
           </Row>
         </Container>

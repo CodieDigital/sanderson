@@ -1,5 +1,5 @@
 import { FooterStyle } from "./styles";
-import { Container } from "@styles/global";
+import { Container } from "styles/global";
 import Link from "next/link";
 import Image from "next/image";
 

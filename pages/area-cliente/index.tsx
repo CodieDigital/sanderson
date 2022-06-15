@@ -1,17 +1,24 @@
-import { LayoutComponent } from "@components/layout";
-import { AreaClienteStyle } from "@styles/pages/area-cliente/styles";
+import { LayoutComponent } from "components/layout";
+import { AreaClienteStyle } from "styles/pages/area-cliente/styles";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
-import InputMask from "react-input-mask";
+import { InputComponent } from "components/data/input";
+import { FormHandles } from "@unform/core";
+import { useRef } from "react";
+import { Form } from "@unform/web";
 
 export default function ClientPage() {
+  const formRef = useRef<FormHandles>(null);
+
+  async function handleSubmit() {}
+
   return (
     <LayoutComponent>
       <AreaClienteStyle>
         <div
           className="bg"
           style={{
-            backgroundImage: `url("images/banner.jpg")`,
+            backgroundImage: `url("/images/banner.jpg")`,
           }}
         >
           <Container>
@@ -21,11 +28,12 @@ export default function ClientPage() {
 
             <div className="form-container">
               <h4 className="paragraph-24-bold">Fazer login</h4>
-              <form>
+              <Form method="post" ref={formRef} onSubmit={handleSubmit}>
                 <label className="paragraph-16-bold">
                   E-mail
-                  <input
+                  <InputComponent
                     type="email"
+                    name="email"
                     placeholder="Digite seu e-mail aqui"
                     className="paragraph-16-regular"
                   />
@@ -33,9 +41,10 @@ export default function ClientPage() {
 
                 <label className="paragraph-16-bold">
                   Telefone
-                  <InputMask
+                  <InputComponent
                     mask="(99) 9 9999-9999"
                     type="text"
+                    name="phone"
                     placeholder="(DDD) 99999-9999"
                     className="paragraph-16-regular"
                   />
@@ -46,12 +55,11 @@ export default function ClientPage() {
                     Esqueceu sua senha?
                   </a>
                 </Link>
-                <input
-                  type="submit"
-                  value="entrar"
-                  className="bt link-18-bold"
-                />
-              </form>
+
+                <button className="bt paragraph-18-bold" type="submit">
+                  Entrar
+                </button>
+              </Form>
             </div>
           </Container>
         </div>

@@ -3,8 +3,8 @@ import Head from "next/head";
 import "../styles/reset.css";
 import { GlobalStyle } from "../styles/global";
 import { FontStyle } from "../styles/fonts";
-import { Configs } from "services/configs";
-import { SharedProvider } from "services/context/shared";
+import { Configs } from "src/services/configs";
+import { SharedProvider } from "src/services/context/shared";
 
 import SwiperCore, {
   Navigation,

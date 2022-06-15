@@ -85,7 +85,7 @@ export const Contato = styled.section`
       width: 100%;
       gap: 8px;
     }
-
+    /* 
     input {
       height: 44px;
       border-radius: 22px;
@@ -97,6 +97,6 @@ export const Contato = styled.section`
       &::placeholder {
         opacity: 0.5;
       }
-    }
+    } */
   }
 `;
