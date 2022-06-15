@@ -1,6 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
-
-module.exports = nextConfig
+module.exports = {
+  trailingSlash: true,
+  images: {
+    domains: [
+      "localhost",
+      "images.codie.digital",
+      "https://master-of-miniatures.vercel.app/",
+    ],
+  },
+};
