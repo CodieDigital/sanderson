@@ -107,10 +107,10 @@ export default function HomePage() {
       });
 
       if (response.status === 200) {
-        // router.push({
-        //   pathname: "/contact/success",
-        //   query: { name },
-        // });
+        router.push({
+          pathname: "/sucesso",
+          query: { name },
+        });
 
         setLoading(false);
       }
