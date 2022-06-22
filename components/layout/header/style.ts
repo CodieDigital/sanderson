@@ -172,6 +172,10 @@ export const Header = styled.header<HeaderProps>`
     a {
       color: var(--text-color);
     }
+
+    &:hover {
+      background-color: var(--darker-button-color);
+    }
   }
 
   .li-button {

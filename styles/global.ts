@@ -74,6 +74,16 @@ body{
     }
 }
 
+.sucesso-links{
+    a{
+        color: var(--text-color) !important;
+    }
+
+    &::before{
+        background: var(--text-color) !important;
+    }
+}
+
 .simule {
     color: var(--button-color) !important;
     text-decoration: underline !important;

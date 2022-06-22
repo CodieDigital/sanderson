@@ -85,18 +85,9 @@ export const Contato = styled.section`
       width: 100%;
       gap: 8px;
     }
-    /* 
-    input {
-      height: 44px;
-      border-radius: 22px;
-      border: 1px solid #707070;
-      background-color: #f5f5f5;
-      width: 100%;
-      padding: 10px 20px;
 
-      &::placeholder {
-        opacity: 0.5;
-      }
-    } */
+    button:hover {
+      background-color: var(--darker-button-color) !important;
+    }
   }
 `;

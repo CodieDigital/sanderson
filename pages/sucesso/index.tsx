@@ -1,11 +1,8 @@
 import { LayoutComponent } from "components/layout";
 import { Termos } from "styles/pages/termos/styles";
 import { Container } from "react-bootstrap";
-import { useRouter } from "next/router";
+
 export default function TermosPage() {
-
-  const router = useRouter()
-
   return (
     <LayoutComponent>
       <Termos>
@@ -23,7 +20,7 @@ export default function TermosPage() {
                   Orçamento enviado com sucesso!
                 </h2>
                 <h2 className="titulo-32-bold">
-                  Entraremos em contato em breve {router?.query?.name}.
+                  Entraremos em contato em breve.
                 </h2>
               </div>
             </div>

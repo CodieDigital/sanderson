@@ -11,6 +11,17 @@ export const Termos = styled.section`
     }
   }
 
+  #sucesso.bg {
+    height: 67vh;
+
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
   .bg {
     width: 100%;
     background-repeat: no-repeat;

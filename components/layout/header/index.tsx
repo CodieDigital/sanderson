@@ -2,6 +2,7 @@ import * as S from "./style";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 interface HeaderProps {
   headerType?: "home" | "internal";
@@ -37,6 +38,8 @@ export function HeaderComponent({ headerType }: HeaderProps) {
     },
   ];
 
+  const router = useRouter();
+
   return (
     <S.Header headerType={headerType} id="header">
       <Link href="https://api.whatsapp.com/send?phone=554333670523" passHref>
@@ -63,7 +66,11 @@ export function HeaderComponent({ headerType }: HeaderProps) {
           <a href="replaced">
             <div className="logo-menu">
               <Image
-                src="/images/svgs/logo.svg"
+                src={
+                  router.pathname != "/sucesso"
+                    ? "/images/svgs/logo.svg"
+                    : "/images/svgs/logo-verde.svg"
+                }
                 alt="logo do menu"
                 width={315}
                 height={74}
@@ -114,7 +121,13 @@ export function HeaderComponent({ headerType }: HeaderProps) {
             <ul>
               {menuItems.map(({ link, name }, index) => {
                 return (
-                  <li className="link-16-medium" key={`menuLinks-${index}`}>
+                  <li
+                    className={
+                      "link-16-medium " +
+                      (router.pathname != "/sucesso" ? "" : "sucesso-links")
+                    }
+                    key={`menuLinks-${index}`}
+                  >
                     <Link href={link}>
                       <a>{name}</a>
                     </Link>
