@@ -60,7 +60,7 @@ body{
     align-items: center;
     justify-content: center;
     background-color: var(--button-color) !important;
-    height: 69px !important;
+    height: 69px;
     padding: 6px 10px;
     border-radius: 35px !important;
     border: none !important;
@@ -73,6 +73,28 @@ body{
         color: var(--text-color) !important;
     }
 }
+
+.bt-cliente {
+    max-width: 170px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--button-color);
+    height: 42px;
+    padding: 6px 10px;
+    border-radius: 35px;
+    color: var(--text-color) !important;
+
+    span,
+    a {
+      color: var(--text-color);
+    }
+
+    &:hover {
+      background-color: var(--darker-button-color);
+    }
+  }
 
 .sucesso-links{
     a{
@@ -612,9 +634,29 @@ ul {
     display: none !important;
 }
 
+@media only screen and (max-width: 1600px) {
+    .bt{
+      max-width: 320px;
+      height: 67px;
+    }
+
+    .bt-cliente{
+        max-width: 168px;
+        height: 41px;
+    }
+
+}
 
 @media only screen and (max-width: 1400px) {
-    
+    .bt{
+        max-width: 310px;
+      height: 65px;
+    }
+    .bt-cliente{
+        max-width: 166px;
+        height: 40px;
+    }
+
     [id*="carousel-right"],
     [id*="carousel-left"] {
         width: 50px;
@@ -642,6 +684,16 @@ ul {
 }
 
 @media only screen and (max-width: 1200px) {
+    .bt{
+      max-width: 300px;
+      height: 63px;
+    }
+    .bt-cliente{
+        max-width: 164px;
+        height: 39px;
+    }
+
+
     .form-guiadas {
         .inputs-row {
             grid-column-gap: 18px;
@@ -659,6 +711,15 @@ ul {
 }
 
 @media only screen and (max-width: 1024px) {
+    .bt{
+        max-width: 290px;
+      height: 61px;
+        }
+    .bt-cliente{
+        max-width: 162px;
+        height: 38px;
+
+    }
     .show-1024 {
         display: flex !important;
     }
@@ -691,8 +752,30 @@ ul {
     }
 }
 
+@media only screen and (max-width: 992px) {
+    .bt{
+        max-width: 280px;
+      height: 59px;
+    }
+    .bt-cliente{
+        max-width: 160px;
+        height: 37px;
+
+    }
+
+}
+
 
 @media only screen and (max-width: 768px) {
+    .bt{
+      max-width: 270px;
+      height: 57px;
+    }
+    .bt-cliente{
+        max-width: 158px;
+        height: 36px;
+
+    }
     .modal-photo {
         padding: 35px 30px;
         
@@ -739,10 +822,8 @@ ul {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 25px;
         grid-row-gap: 30px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
+    } 
+    
     .modal-galeria{
         
         .row {
@@ -763,8 +844,15 @@ ul {
 }
 
 
-
 @media only screen and (max-width: 650px) {
+    .bt{
+        max-width: 260px;
+        height: 55px;
+    }
+    .bt-cliente{
+        max-width: 156px;
+    }
+
     .logo {
         margin-right: 10px;
     }
@@ -795,6 +883,7 @@ ul {
 
 
 @media only screen and (max-width: 600px) {
+
     .aparecer-600 {
         display: flex !important;
     }
@@ -804,9 +893,17 @@ ul {
     }
 }
 
+@media only screen and (max-width: 576px) {
+    .bt{
+        max-width: 250px;
+      height: 52px;
+    }
+    .bt-cliente{
+        max-width: 156px;
+    }
+}
+
 @media only screen and (max-width: 520px) {
-    
-    
     .filter  {
         display:  none;
     }
@@ -816,6 +913,12 @@ ul {
 }
 
 @media only screen and (max-width: 420px) {
+    .bt{
+        max-width: 240px;
+    }
+    .bt-cliente{
+        max-width: 154px;
+    }
     .modal-photo {
         padding: 25px 15px;
         

@@ -28,7 +28,7 @@ export const Sobre = styled.section`
     .title-text {
       display: flex;
       justify-content: space-between;
-      gap: 30px;
+      gap: clamp(10px, 1.56vw, 30px);
 
       .-title {
         max-width: 610px;

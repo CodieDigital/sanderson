@@ -18,6 +18,7 @@ label,
 li,
 td {
   text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased;
 }
 
 *{

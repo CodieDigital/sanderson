@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Contato = styled.section`
-  padding: 2.08vw 0;
+  padding: 2.08vw 0 40px;
   position: relative;
   overflow: hidden;
 
@@ -77,7 +77,7 @@ export const Contato = styled.section`
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.56vw;
+    gap: clamp(10px, 1.56vw, 30px);
 
     label {
       display: flex;
@@ -88,6 +88,40 @@ export const Contato = styled.section`
 
     button:hover {
       background-color: var(--darker-button-color) !important;
+    }
+  }
+
+  @media only screen and (max-width: 1600px) {
+    input {
+      height: 43px;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    input {
+      height: 42px;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    input {
+      height: 41px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    input {
+      height: 40px;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    input {
+      height: 39px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    input {
+      height: 38px;
     }
   }
 `;

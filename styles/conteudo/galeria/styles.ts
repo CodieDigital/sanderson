@@ -27,11 +27,12 @@ export const Galeria = styled.section`
 
     .swiper-slide {
       position: relative;
-      height: 534px;
       max-width: 450px;
+      max-height: 534px;
       width: 100%;
       cursor: pointer;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      aspect-ratio: 450/534;
 
       img,
       span {
@@ -130,23 +131,78 @@ export const Galeria = styled.section`
     margin: 0 auto;
   }
 
+  @media only screen and (max-width: 1600px) {
+    .swiper {
+      height: 570px;
+
+      .swiper-slide {
+        aspect-ratio: 450/500;
+        max-height: 500px;
+      }
+
+      .image-label {
+        min-height: 145px;
+        clip-path: polygon(0 50%, 100% 0%, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0 50%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    .swiper {
+      height: 500px;
+
+      .swiper-slide {
+        aspect-ratio: 360/440;
+        max-height: 440px;
+      }
+
+      .image-label {
+        min-height: 135px;
+        clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .swiper {
+      height: 480px;
+
+      .swiper-slide {
+        aspect-ratio: 360/420;
+        max-height: 420px;
+      }
+
+      .image-label {
+        min-height: 125px;
+        clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+  }
+
   @media only screen and (max-width: 1024px) {
-    .swiper-slide {
-      max-width: 100% !important;
+    .swiper {
+      .swiper-slide {
+        max-width: 100% !important;
+      }
+
+      .image-label {
+        min-height: 115px;
+        clip-path: polygon(0 35%, 100% 0%, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0 35%, 100% 0%, 100% 100%, 0% 100%);
+
+        .place-title {
+          padding-left: 70px;
+        }
+      }
     }
   }
 
   @media only screen and (max-width: 650px) {
     .orcamento {
       margin-top: 10px;
-    }
-
-    .swiper {
-      height: 510px;
-
-      .swiper-slide {
-        height: 440px;
-      }
     }
 
     .swiper-button-prev {

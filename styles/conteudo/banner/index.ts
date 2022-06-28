@@ -91,7 +91,7 @@ export const BannerHome = styled.section`
     }
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 768px) {
     .content-banner {
       width: 100%;
     }
@@ -107,7 +107,7 @@ export const BannerHome = styled.section`
 
     .swiper {
       aspect-ratio: 1024/1024;
-      min-height: 300px;
+      min-height: 500px;
 
       .mobile-banner {
         display: flex !important;
