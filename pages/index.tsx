@@ -1334,7 +1334,22 @@ export default function HomePage() {
                   />
                 </label>
 
-                <button className="bt paragraph-18-bold" type="submit">
+                <button
+                  className="bt paragraph-18-bold"
+                  type="submit"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <Image
+                      src="/images/loading-animation.gif"
+                      alt="my gif"
+                      height={50}
+                      width={55}
+                      className="loading-animation"
+                    />
+                  ) : (
+                    ""
+                  )}
                   solicite um orçamento
                 </button>
               </Form>

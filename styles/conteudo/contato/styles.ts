@@ -73,6 +73,15 @@ export const Contato = styled.section`
     text-transform: initial;
   }
 
+  .bt:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+    gap: 8px;
+  }
+  .loading-animation {
+    object-fit: contain;
+  }
+
   form {
     width: 100%;
     display: flex;

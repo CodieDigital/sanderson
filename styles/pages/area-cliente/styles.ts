@@ -11,7 +11,7 @@ export const AreaClienteStyle = styled.section`
     background-size: cover;
     position: relative;
     overflow: hidden;
-    padding: clamp(130px, 10.3vw, 200px) 0 2.08vw;
+    padding: clamp(160px, 10.3vw, 200px) 0px 60px;
     min-height: 90vh;
     display: flex;
     align-items: center;
