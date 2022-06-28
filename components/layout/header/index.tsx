@@ -24,10 +24,10 @@ export function HeaderComponent({ headerType }: HeaderProps) {
       link: "/#como-funciona",
       name: "Como Funciona",
     },
-    {
-      link: "/#simulador",
-      name: "Simulador",
-    },
+    // {
+    //   link: "/#simulador",
+    //   name: "Simulador",
+    // },
     {
       link: "/#cases",
       name: "Cases",

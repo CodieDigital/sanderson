@@ -8,7 +8,6 @@ interface HeaderProps {
 export const Header = styled.header<HeaderProps>`
   font-size: ${(props) => props.fontSize};
   padding: 40px 0;
-  height: 160px;
   position: relative;
   z-index: 90;
 
@@ -58,7 +57,7 @@ export const Header = styled.header<HeaderProps>`
         align-items: flex-start;
 
         ul {
-          gap: 40px;
+          gap: 20px;
           flex-direction: column;
           align-items: flex-start;
         }
@@ -152,30 +151,8 @@ export const Header = styled.header<HeaderProps>`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: 1.04vw;
+    gap: clamp(10px, 1.04vw, 20px);
     align-items: center;
-  }
-
-  .bt-cliente {
-    max-width: 170px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--button-color);
-    height: 42px;
-    padding: 6px 10px;
-    border-radius: 35px;
-    color: var(--text-color) !important;
-
-    span,
-    a {
-      color: var(--text-color);
-    }
-
-    &:hover {
-      background-color: var(--darker-button-color);
-    }
   }
 
   .li-button {
@@ -185,6 +162,42 @@ export const Header = styled.header<HeaderProps>`
     &::before {
       display: none;
     }
+  }
+
+  @media only screen and (max-width: 1600px) {
+    padding: 35px 0;
+
+    .logo-menu {
+      max-width: 300px;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    padding: 30px 0;
+
+    .logo-menu {
+      max-width: 285px;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding: 25px 0;
+
+    .logo-menu {
+      max-width: 270px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    padding: 20px 0;
+
+    .logo-menu {
+      max-width: 265px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 15px 0;
   }
 
   @media only screen and (max-width: 500px) {

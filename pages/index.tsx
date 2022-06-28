@@ -464,9 +464,9 @@ export default function HomePage() {
           <div className="orcamento">
             <ButtonComponent href="#contato" text="solicite um orçamento" />
 
-            <Link href="#simulador">
+            {/* <Link href="#simulador">
               <a className="simule link-16-regular">Simule sua instalação</a>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </Solucoes>
@@ -590,7 +590,7 @@ export default function HomePage() {
             </div>
             <div className="link-investimento">
               <span>
-                Sistema fotovoltaico é um ótimo investimento,
+                Sistema fotovoltaico é um ótimo investimento,{" "}
                 <Link href="#contato">
                   <a>vamos conversar.</a>
                 </Link>
@@ -1107,9 +1107,9 @@ export default function HomePage() {
           <div className="orcamento">
             <ButtonComponent href="#contato" text="solicite um orçamento" />
 
-            <Link href="#simulador">
+            {/* <Link href="#simulador">
               <a className="simule link-16-regular">Simule sua instalação</a>
-            </Link>
+            </Link> */}
           </div>
         </Container>
       </Galeria>

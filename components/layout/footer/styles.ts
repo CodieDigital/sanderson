@@ -27,7 +27,7 @@ export const FooterStyle = styled.div`
   .box-footer {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: clamp(10px, 1.56vw, 30px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -106,6 +106,38 @@ export const FooterStyle = styled.div`
     }
   }
 
+  @media only screen and (max-width: 1600px) {
+    padding: 5vw 0 15px;
+
+    .scroll-up {
+      top: -42px;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    padding: 4vw 0 15px;
+
+    .bottom-footer {
+      margin-top: 1.8vw;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding: 3vw 0 15px;
+
+    .bottom-footer {
+      margin-top: 1.6vw;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    padding: 2.5vw 0 10px;
+
+    .bottom-footer {
+      margin-top: 1.5vw;
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     .box-footer {
       flex-wrap: wrap;
@@ -120,8 +152,7 @@ export const FooterStyle = styled.div`
 
   @media only screen and (max-width: 640px) {
     .menu {
-      flex-direction: column;
-      align-items: center;
+      display: none;
     }
     .bottom-footer {
       flex-direction: column;
