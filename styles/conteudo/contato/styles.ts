@@ -123,5 +123,13 @@ export const Contato = styled.section`
     input {
       height: 38px;
     }
+
+    .contact-info {
+      max-width: 100%;
+    }
+
+    .bt {
+      max-width: 100%;
+    }
   }
 `;

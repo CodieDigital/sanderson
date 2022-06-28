@@ -46,4 +46,11 @@ export const Termos = styled.section`
     flex-direction: column;
     gap: 15px;
   }
+
+  @media only screen and (max-width: 1024px) {
+    #sucesso.bg {
+      height: auto;
+      padding: 185px 0 55px;
+    }
+  }
 `;

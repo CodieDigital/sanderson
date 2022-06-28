@@ -32,47 +32,31 @@ export const ButtonStyle = styled.div`
   }
 
   @media only screen and (max-width: 1600px) {
-    max-width: 320px;
-    height: 67px;
-  }
-
-  @media only screen and (max-width: 1400px) {
-    max-width: 310px;
+    max-width: 300px;
     height: 65px;
   }
 
-  @media only screen and (max-width: 1200px) {
-    max-width: 300px;
-    height: 63px;
-  }
-
-  @media only screen and (max-width: 1024px) {
-    max-width: 290px;
-    height: 61px;
-  }
-
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 1400px) {
     max-width: 280px;
-    height: 59px;
+    height: 60px;
   }
 
-  @media only screen and (max-width: 768px) {
-    max-width: 270px;
-    height: 57px;
-  }
-
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 1200px) {
     max-width: 260px;
     height: 55px;
   }
 
-  @media only screen and (max-width: 576px) {
-    max-width: 250px;
-    height: 52px;
-  }
-
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 1024px) {
     max-width: 240px;
     height: 50px;
+  }
+
+  @media only screen and (max-width: 992px) {
+    max-width: 220px;
+    height: 45px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    height: 40px;
   }
 `;

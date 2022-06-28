@@ -350,7 +350,7 @@ export default function HomePage() {
                     />
                   </a>
                 </Link>
-                <Container>
+                <Container className="container">
                   <Link href="#solucoes" passHref>
                     <a className="scroll">
                       <svg
@@ -923,7 +923,7 @@ export default function HomePage() {
           />
         </div>
 
-        <Container>
+        <Container className="container">
           <div className="middle-title">
             <h2 className="titulo-48-bold">Projetos que realizamos</h2>
           </div>
@@ -938,7 +938,7 @@ export default function HomePage() {
               0: {
                 slidesPerView: 1,
               },
-              768: {
+              640: {
                 slidesPerView: 2,
               },
               1024: {

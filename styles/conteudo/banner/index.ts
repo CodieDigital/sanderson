@@ -12,13 +12,6 @@ export const BannerHome = styled.section`
     color: var(--white);
   }
 
-  .container-geral {
-    height: 100%;
-    flex-direction: row;
-    position: relative;
-    z-index: 5;
-  }
-
   .swiper {
     margin-top: -160px;
     /* height: 100vh; */
@@ -94,6 +87,11 @@ export const BannerHome = styled.section`
   @media only screen and (max-width: 768px) {
     .content-banner {
       width: 100%;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
     }
 
     .text-content h1 {

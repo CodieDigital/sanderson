@@ -12,6 +12,10 @@ export const AreaClienteStyle = styled.section`
     position: relative;
     overflow: hidden;
     padding: clamp(130px, 10.3vw, 200px) 0 2.08vw;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   [class*="-title"] {
@@ -67,6 +71,31 @@ export const AreaClienteStyle = styled.section`
 
     .bt {
       margin: 0 auto;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .bt {
+      max-width: 200px;
+      height: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    .bt {
+      max-width: 180px;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .bt {
+      max-width: 160px;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .bt {
+      max-width: 140px;
     }
   }
 `;

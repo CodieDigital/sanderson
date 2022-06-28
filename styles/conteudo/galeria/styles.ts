@@ -184,12 +184,15 @@ export const Galeria = styled.section`
 
   @media only screen and (max-width: 1024px) {
     .swiper {
+      height: 440px;
+
       .swiper-slide {
-        max-width: 100% !important;
+        aspect-ratio: 360/370;
+        max-height: 370px;
       }
 
       .image-label {
-        min-height: 115px;
+        min-height: 95px;
         clip-path: polygon(0 35%, 100% 0%, 100% 100%, 0% 100%);
         -webkit-clip-path: polygon(0 35%, 100% 0%, 100% 100%, 0% 100%);
 
@@ -197,10 +200,35 @@ export const Galeria = styled.section`
           padding-left: 70px;
         }
       }
+
+      .saiba-mais {
+        min-height: 145px;
+        padding: 20px;
+      }
     }
   }
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 768px) {
+    .swiper {
+      height: 360px;
+
+      .swiper-slide {
+        aspect-ratio: 250/300;
+        max-height: 300px;
+      }
+
+      .image-label {
+        clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    .container {
+      max-width: 380px !important;
+    }
+
     .orcamento {
       margin-top: 10px;
     }
@@ -213,6 +241,17 @@ export const Galeria = styled.section`
     .swiper-button-next {
       right: 40%;
       transform: translateX(-40%);
+    }
+
+    .swiper {
+      .saiba-mais {
+        min-height: 135px;
+      }
+
+      .image-label {
+        min-height: 85px;
+        padding: 20px;
+      }
     }
   }
 `;

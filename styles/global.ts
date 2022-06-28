@@ -636,8 +636,8 @@ ul {
 
 @media only screen and (max-width: 1600px) {
     .bt{
-      max-width: 320px;
-      height: 67px;
+        max-width: 300px;
+        height: 65px;
     }
 
     .bt-cliente{
@@ -649,8 +649,8 @@ ul {
 
 @media only screen and (max-width: 1400px) {
     .bt{
-        max-width: 310px;
-      height: 65px;
+        max-width: 280px;
+    height: 60px;
     }
     .bt-cliente{
         max-width: 166px;
@@ -685,8 +685,8 @@ ul {
 
 @media only screen and (max-width: 1200px) {
     .bt{
-      max-width: 300px;
-      height: 63px;
+        max-width: 260px;
+    height: 55px;
     }
     .bt-cliente{
         max-width: 164px;
@@ -712,8 +712,8 @@ ul {
 
 @media only screen and (max-width: 1024px) {
     .bt{
-        max-width: 290px;
-      height: 61px;
+        max-width: 240px;
+    height: 50px;
         }
     .bt-cliente{
         max-width: 162px;
@@ -754,8 +754,8 @@ ul {
 
 @media only screen and (max-width: 992px) {
     .bt{
-        max-width: 280px;
-      height: 59px;
+        max-width: 220px;
+    height: 45px;
     }
     .bt-cliente{
         max-width: 160px;
@@ -768,8 +768,7 @@ ul {
 
 @media only screen and (max-width: 768px) {
     .bt{
-      max-width: 270px;
-      height: 57px;
+    height: 40px;
     }
     .bt-cliente{
         max-width: 158px;
@@ -782,9 +781,6 @@ ul {
         .photo-handle-area {
             margin-bottom: 20px;
             padding: 40px 0;
-            
-            
-            
             .description-photo-handle-area {
                 margin-top: 10px;
             }
@@ -845,10 +841,7 @@ ul {
 
 
 @media only screen and (max-width: 650px) {
-    .bt{
-        max-width: 260px;
-        height: 55px;
-    }
+
     .bt-cliente{
         max-width: 156px;
     }
@@ -894,10 +887,7 @@ ul {
 }
 
 @media only screen and (max-width: 576px) {
-    .bt{
-        max-width: 250px;
-      height: 52px;
-    }
+
     .bt-cliente{
         max-width: 156px;
     }
@@ -913,9 +903,7 @@ ul {
 }
 
 @media only screen and (max-width: 420px) {
-    .bt{
-        max-width: 240px;
-    }
+
     .bt-cliente{
         max-width: 154px;
     }
@@ -925,9 +913,6 @@ ul {
         .photo-handle-area {
             margin-bottom: 15px;
             padding: 30px 0;
-            
-            
-            
             .description-photo-handle-area {
                 margin-top: 8px;
             }

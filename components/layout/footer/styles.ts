@@ -18,10 +18,23 @@ export const FooterStyle = styled.div`
     top: -34px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 10px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: 0.3s ease-in-out;
+    }
+
+    &:hover {
+      img {
+        transform: scale(0.95);
+      }
+    }
   }
 
   .box-footer {
@@ -110,7 +123,16 @@ export const FooterStyle = styled.div`
     padding: 5vw 0 15px;
 
     .scroll-up {
-      top: -42px;
+      img {
+        width: 57px !important;
+        height: 57px !important;
+      }
+    }
+
+    .logo-footer {
+      img {
+        width: 300px !important;
+      }
     }
   }
 
@@ -120,6 +142,20 @@ export const FooterStyle = styled.div`
     .bottom-footer {
       margin-top: 1.8vw;
     }
+
+    .scroll-up {
+      top: -30px;
+      img {
+        width: 54px !important;
+        height: 54px !important;
+      }
+    }
+
+    .logo-footer {
+      img {
+        width: 280px !important;
+      }
+    }
   }
 
   @media only screen and (max-width: 1200px) {
@@ -128,6 +164,20 @@ export const FooterStyle = styled.div`
     .bottom-footer {
       margin-top: 1.6vw;
     }
+
+    .scroll-up {
+      top: -28px;
+      img {
+        width: 51px !important;
+        height: 51px !important;
+      }
+    }
+
+    .logo-footer {
+      img {
+        width: 260px !important;
+      }
+    }
   }
 
   @media only screen and (max-width: 1024px) {
@@ -135,6 +185,19 @@ export const FooterStyle = styled.div`
 
     .bottom-footer {
       margin-top: 1.5vw;
+    }
+
+    .scroll-up {
+      top: -26px;
+      img {
+        width: 48px !important;
+        height: 48px !important;
+      }
+    }
+    .logo-footer {
+      img {
+        width: 240px !important;
+      }
     }
   }
 
@@ -146,7 +209,17 @@ export const FooterStyle = styled.div`
     }
 
     .scroll-up {
-      max-width: 270px;
+      top: -24px;
+      img {
+        width: 45px !important;
+        height: 45px !important;
+      }
+    }
+
+    .logo-footer {
+      img {
+        width: 220px !important;
+      }
     }
   }
 
@@ -161,6 +234,30 @@ export const FooterStyle = styled.div`
       .termos-privacidade {
         flex-direction: column;
         align-items: center;
+      }
+    }
+
+    .scroll-up {
+      top: -22px;
+      img {
+        width: 42px !important;
+        height: 42px !important;
+      }
+    }
+
+    .logo-footer {
+      img {
+        width: 200px !important;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .scroll-up {
+      top: -20px;
+      img {
+        width: 38px !important;
+        height: 38px !important;
       }
     }
   }
