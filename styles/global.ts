@@ -233,7 +233,6 @@ body{
 .error-message {
     color: var(--error);
     font-size: 12px;
-    font-family: Filson;
 }
 
 html {

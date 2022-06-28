@@ -90,7 +90,7 @@ export function HeaderComponent({ headerType }: HeaderProps) {
               </div>
 
               <div className="menu">
-                <nav className="link-1-bold-graphie">
+                <nav className="link-16-medium">
                   <ul>
                     {menuItems.map(({ link, name }, index) => {
                       return (

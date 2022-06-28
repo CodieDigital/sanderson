@@ -45,7 +45,7 @@ export function InputComponent({
           >
             {() => (
               <input
-                className="paragraph-1-bold-graphie"
+                className="paragraph-18-regular"
                 id={id}
                 defaultValue={defaultValue}
                 ref={inputRef}
@@ -75,7 +75,7 @@ export function InputComponent({
                 : type
             }
             {...rest}
-            className="paragraph-1-bold-graphie"
+            className="paragraph-18-regular"
             onChange={(e) => {
               if (label || passwordBar) {
                 setValue(e.target.value);
@@ -87,7 +87,7 @@ export function InputComponent({
         {label && (
           <label
             htmlFor={id}
-            className={`paragraph-1-bold-graphie ${
+            className={`paragraph-18-regular ${
               value.length > 0 ? "active" : ""
             }`}
           >
@@ -132,7 +132,7 @@ export function InputComponent({
       </div>
 
       {error && (
-        <span className="error paragraph-3-bold-graphie error-message">
+        <span className="error paragraph-18-regular error-message">
           {error}
         </span>
       )}

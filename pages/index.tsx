@@ -1348,9 +1348,8 @@ export default function HomePage() {
                       className="loading-animation"
                     />
                   ) : (
-                    ""
+                    "solicite um orçamento"
                   )}
-                  solicite um orçamento
                 </button>
               </Form>
             </Col>
