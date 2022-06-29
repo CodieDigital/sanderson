@@ -66,9 +66,11 @@ export const Header = styled.header<HeaderProps>`
 
     .close {
       color: #fff;
-      padding: 10px 30px;
       display: flex;
+      -webkit-box-pack: end;
       justify-content: flex-end;
+      max-width: 12px;
+      margin: 10px 30px 10px auto;
     }
   }
 

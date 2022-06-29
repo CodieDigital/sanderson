@@ -20,6 +20,7 @@ export const BannerHome = styled.section`
     width: 100%;
     position: relative;
     overflow: hidden;
+    max-width: 100%;
 
     img {
       object-fit: cover;

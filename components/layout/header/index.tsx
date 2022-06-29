@@ -80,7 +80,7 @@ export function HeaderComponent({ headerType }: HeaderProps) {
         </Link>
 
         <div className={`menu-mobile ${menu ? "active" : ""}`}>
-          <div className="filter">
+          <div className="filter" onClick={() => setMenu(false)}>
             <div className="menu">
               <div
                 className="close title-32-bold"

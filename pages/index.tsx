@@ -627,6 +627,7 @@ export default function HomePage() {
                 src="https://www.youtube.com/embed/3OuPQ6GsuOw"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                loading="lazy"
               ></iframe>
             </div>
 
@@ -913,16 +914,6 @@ export default function HomePage() {
       </Simulador> */}
 
       <Galeria id="cases">
-        <div className="detail-right">
-          <Image
-            src="/images/details/green-elipse-solutions-right.png"
-            alt="detalhe"
-            width={582}
-            height={2109}
-            layout="responsive"
-          />
-        </div>
-
         <Container className="container">
           <div className="middle-title">
             <h2 className="titulo-48-bold">Projetos que realizamos</h2>
